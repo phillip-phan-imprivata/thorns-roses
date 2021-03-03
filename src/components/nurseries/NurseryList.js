@@ -15,11 +15,11 @@ export const NurseryList = () => {
   const {nurseryDistributors, getNurseryDistributors} = useContext(NurseryDistributorsContext)
 
   useEffect(() => {
-    getNurseryFlowers()
     getFlowers()
-    getNurseries()
-    getDistributors()
-    getNurseryDistributors()
+    .then(getNurseries)
+    .then(getDistributors)
+    .then(getNurseryDistributors)
+    .then(getNurseryFlowers)
   }, [])
 
   return (

@@ -6,7 +6,7 @@ export const NurseryProvider = (props) => {
   const [nurseries, setNurseries] = useState([])
 
   const getNurseries = () => {
-    fetch("http://localhost:8088/nurseries")
+    return fetch("http://localhost:8088/nurseries")
       .then(res => res.json())
       .then(setNurseries)
   }
