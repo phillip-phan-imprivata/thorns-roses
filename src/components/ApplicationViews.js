@@ -6,31 +6,56 @@ import { FlowerProvider } from "./flowers/FlowerProvider"
 import { NurseryFlowersProvider } from "./nurseryFlowers/nurseryFlowersProvider"
 import { DistributorsProvider } from "./distributors/DistributorsProvider"
 import { NurseryDistributorsProvider } from "./nurseryDistributors/nurseryDistributorsProvider"
+import { DistributorList } from "./distributors/DistributorList"
+import { RetailerProvider } from "./retailers/RetailerProvider"
+import { RetailerList } from "./retailers/RetailerList"
 
 export const ApplicationViews = () => {
   return (
     <>
-      <Route exact path="/nurseries">
-        <NurseryDistributorsProvider>
-        <DistributorsProvider>
-        <NurseryFlowersProvider>
-        <FlowerProvider>
-        <NurseryProvider>
+      <NurseryDistributorsProvider>
+      <DistributorsProvider>
+      <NurseryFlowersProvider>
+      <FlowerProvider>
+      <NurseryProvider>
+        <Route exact path="/nurseries">
           <NurseryList />
-        </NurseryProvider>
-        </FlowerProvider>
-        </NurseryFlowersProvider>
-        </DistributorsProvider>
-        </NurseryDistributorsProvider>
-      </Route>
+        </Route>
+      </NurseryProvider>
+      </FlowerProvider>
+      </NurseryFlowersProvider>
+      </DistributorsProvider>
+      </NurseryDistributorsProvider>
 
-      <Route exact path="/distributors">
-        <></>
-      </Route>
+      <RetailerProvider>
+      <NurseryFlowersProvider>
+      <NurseryDistributorsProvider>
+      <FlowerProvider>
+      <DistributorsProvider>
+        <Route exact path="/distributors">
+          <DistributorList />
+        </Route>
+      </DistributorsProvider>
+      </FlowerProvider>
+      </NurseryDistributorsProvider>
+      </NurseryFlowersProvider>
+      </RetailerProvider>
 
-      <Route exact path="/retailers">
-        <></>
-      </Route>
+      <FlowerProvider>
+      <NurseryFlowersProvider>
+      <NurseryProvider>
+      <NurseryDistributorsProvider>
+      <DistributorsProvider>
+      <RetailerProvider>
+        <Route exact path="/retailers">
+          <RetailerList />
+        </Route>
+      </RetailerProvider>
+      </DistributorsProvider>
+      </NurseryDistributorsProvider>
+      </NurseryProvider>
+      </NurseryFlowersProvider>
+      </FlowerProvider>
     </>
   )
 }

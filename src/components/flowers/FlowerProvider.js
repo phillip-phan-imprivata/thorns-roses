@@ -6,7 +6,7 @@ export const FlowerProvider = (props) => {
   const [flowers, setFlowers] = useState([])
 
   const getFlowers = () => {
-    fetch("http://localhost:8088/flowers")
+    return fetch("http://localhost:8088/flowers")
       .then(res => res.json())
       .then(setFlowers)
   }
