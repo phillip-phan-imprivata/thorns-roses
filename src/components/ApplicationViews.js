@@ -9,6 +9,7 @@ import { NurseryDistributorsProvider } from "./nurseryDistributors/nurseryDistri
 import { DistributorList } from "./distributors/DistributorList"
 import { RetailerProvider } from "./retailers/RetailerProvider"
 import { RetailerList } from "./retailers/RetailerList"
+import { OrderProvider } from "./orders/OrderProvider"
 
 export const ApplicationViews = () => {
   return (
@@ -41,6 +42,7 @@ export const ApplicationViews = () => {
       </NurseryFlowersProvider>
       </RetailerProvider>
 
+      <OrderProvider>
       <FlowerProvider>
       <NurseryFlowersProvider>
       <NurseryProvider>
@@ -56,6 +58,7 @@ export const ApplicationViews = () => {
       </NurseryProvider>
       </NurseryFlowersProvider>
       </FlowerProvider>
+      </OrderProvider>
     </>
   )
 }
